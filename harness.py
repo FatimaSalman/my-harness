@@ -74,14 +74,17 @@ COMPAT = {
 }
 # A model pi's catalog does not know gets these limits; tune them for yours.
 UNKNOWN_MODEL = {"input": ["text"], "contextWindow": 128000, "maxTokens": 16384}
-NOTE = (
-    "You are working on an engineering task. Your tools act on the task's Linux"
-    " container, whose working directory is {workdir}; it has no internet"
-    " access. Read the whole instruction and the files it points to, put every"
-    " deliverable exactly where and in the format the instruction asks, and"
-    " check what you wrote. When you are done, reply with a short summary of"
-    " what you delivered and where."
+NOTE =  (
+   "You are working on an engineering task. Your tools act on the task's Linux"
+   " container, whose working directory is {workdir}; it has no internet"
+   " access. Read the whole instruction and the files it points to, put every"
+   " deliverable exactly where and in the format the instruction asks, and"
+   " check what you wrote."
+   " CRITICAL: Before you say done, you MUST run `ls -R files/` and verify"
+   " every deliverable exists. If files/ is empty, you have NOT finished - create the files first!"
+   " When you are done, reply with a short summary of what you delivered and where."
 )
+
 TIME_NOTE = (
     " You have about {minutes} minutes in all; leave time to finish the"
     " deliverables."
